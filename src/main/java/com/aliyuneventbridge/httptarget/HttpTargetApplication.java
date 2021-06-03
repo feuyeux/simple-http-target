@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class HttpTargetApplication {
-    Logger logger = LoggerFactory.getLogger(HttpTargetApplication.class);
+    final Logger logger = LoggerFactory.getLogger(HttpTargetApplication.class);
     // Record received cloudevents
-    List<Map<String, Object>> eventList = new CopyOnWriteArrayList<>();
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    final List<Map<String, Object>> eventList = new CopyOnWriteArrayList<>();
+    final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
 	public static void main(String[] args) {
 		SpringApplication.run(HttpTargetApplication.class, args);
